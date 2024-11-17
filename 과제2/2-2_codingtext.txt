@@ -1,0 +1,24 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(string my_string, string is_prefix) { //아이디어: my_string의 모든 접두사를 리스트화 시키고, 그것을 is_prefix와 비교 하자.
+    vector<string> prefixes;
+    int answer = 0;
+    
+    for (int i=1; i<= my_string.size(); i++){// i=0으로 놓으면 prefixes 첫번째가 공백이 되어버린다. 그래서 1로 놓는다.
+        prefixes.push_back(my_string.substr(0,i));
+    }
+    
+    for (string& prefix : prefixes){
+        if(prefix == is_prefix){
+            
+            return 1;
+        }
+        
+    }
+    
+    return 0;
+
+}

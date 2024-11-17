@@ -1,0 +1,27 @@
+#include <string>
+#include <vector>
+#include <sstream>
+
+using namespace std;
+
+int solution(string s) {
+    int answer = 0;
+    vector<int> history; // 아이디어: istringstream으로 공백을 기준으로 인식해보자.
+    
+    istringstream iss(s);
+    string token;
+    
+    while( iss >> token){
+        if(token == "Z"){
+            if(!history.empty()){ //첫번째가 아니라면
+            answer -= history.back();
+            history.pop_back();
+            }
+        } else {
+            int number = stoi(token);
+            answer += number;
+            history.push_back(number);   
+        }
+    }
+    return answer;
+}

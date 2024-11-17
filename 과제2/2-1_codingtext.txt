@@ -1,0 +1,38 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int n, int k) { // 아이디어: n이 10개 이상인 경우 음료수 값에 변화가 있기에 조건문을 통해 서비스를 받는지, 
+    // 받는다면 얼마나 서비스를 받는지 판단해 k값에 변화를 줍니다.
+    int answer = 0;
+    int kkochi = 12000;
+    int drink  = 2000;
+    
+    if (n>=10){
+        int service_drink = n / 10; 
+        
+        if(k >= service_drink){
+            
+            k-=service_drink;
+            
+        }else if( k < service_drink )
+        {
+            
+            k = 0;
+                
+        }
+        
+        answer= kkochi*n + drink * k;
+        
+    }
+    else if(n < 10){
+        
+        answer= kkochi*n + drink * k;
+        
+    }
+    
+    
+    
+    return answer;
+}

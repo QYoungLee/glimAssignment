@@ -1,0 +1,34 @@
+# 빌드 결과물
+x64/
+Debug/
+Release/
+*.obj
+*.pdb
+*.exe
+*.ilk
+*.log
+
+# Visual Studio 사용자 설정
+.vs/
+*.suo
+*.user
+*.vcxproj.user
+*.filters
+*.ipch/
+*.tlog/
+*.lastbuildstate
+*.VC.db
+
+# 사전 컴파일된 헤더 및 기타 임시 파일
+*.pch
+*.idb
+*.sdf
+*.tmp
+*.bak
+
+# 프로그램 생성 폴더 (선택적으로 제외)
+image/
+
+# 시스템 파일
+Thumbs.db
+.DS_Store
